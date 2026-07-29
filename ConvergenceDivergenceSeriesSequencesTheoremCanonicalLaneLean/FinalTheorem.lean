@@ -1,0 +1,20 @@
+import canonicalLaneMathlib.AdmissibleClass
+import ConvergenceDivergenceSeriesSequencesTheoremCanonicalLaneLean.ConvergenceTests
+import ConvergenceDivergenceSeriesSequencesTheoremCanonicalLaneLean.SeriesConvergenceConditions
+import ConvergenceDivergenceSeriesSequencesTheoremCanonicalLaneLean.SequenceConvergenceCriteria
+import ConvergenceDivergenceSeriesSequencesTheoremCanonicalLaneLean.DivergenceTests
+import ConvergenceDivergenceSeriesSequencesTheoremCanonicalLaneLean.PowerSeriesConvergence
+import ConvergenceDivergenceSeriesSequencesTheoremCanonicalLaneLean.UniformConvergence
+
+namespace HautevilleHouse
+namespace ConvergenceDivergenceSeriesSequencesTheoremCanonicalLaneLean
+
+def ConstrainedClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_closure_endgame (A : AdmissibleClass) :
+    ConstrainedClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ConvergenceDivergenceSeriesSequencesTheoremCanonicalLaneLean
+end HautevilleHouse
